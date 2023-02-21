@@ -1,6 +1,9 @@
 //GOOGLE CALENDAR API
 
+//Importar API 
 const {google} = require('googleapis');
+
+//Importar variaveis de ambiente
 require('dotenv').config();
 
 // Provide the required configuration
@@ -46,6 +49,7 @@ const getEvents = async (dateTimeStart, dateTimeEnd) => {
 //let end = '2021-10-04T00:00:00.000Z';
 
 function fullDate(offset){
+	//Offset: por exemplo, se eu quiser a data do mes que vem
 	let date = new Date();
 	let year = date.getFullYear();
 	let month = ("0" + (date.getMonth() + 1 + offset)).slice(-2);
@@ -75,6 +79,8 @@ function fullDate(offset){
 }
 */
 
+	//Possivelment acabar
+	
 	async function get_events(){
 	
 	let start = fullDate(0);
@@ -119,6 +125,7 @@ function fullDate(offset){
 // import { create, Whatsapp } from 'venom-bot';
 const venom = require('venom-bot');
 
+//Inicializacao
 venom
   .create()
   .then((client) => start(client))
@@ -126,6 +133,7 @@ venom
     console.log(erro);
   });
 
+//Funcao padrao, possivelmente apagar
 async function start(client) {
   client.onMessage((message) => {
     if (message.body === 'Hi' && message.isGroupMsg === false) {
@@ -180,8 +188,6 @@ async function start(client) {
   }, 5000);
   
     
-
-
     async function get_events(){
 	
       let start = fullDate(0);
